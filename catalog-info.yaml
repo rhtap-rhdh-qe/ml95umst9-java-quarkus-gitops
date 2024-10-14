@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ml95umst9-java-quarkus-gitops
+  description: This is GitOps manifest for ml95umst9-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: ml95umst9-java-quarkus
+    janus-idp.io/tekton: ml95umst9-java-quarkus
+    backstage.io/kubernetes-id: ml95umst9-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ml95umst9-java-quarkus
